@@ -43,21 +43,6 @@ def strategy(entry, lookback, qty, open_position=False):
                 print(order)
                 open_position = False
 
-        # if open_position:
-        #     df = pd.read_sql('BTCUSDT', engine)
-        #     sincebuy = df.loc[df.Time > pd.to_datetime(order['transactTime'],
-        #                                                     unit='ms')]
-        #     if len(sincebuy) > 1:
-        #         sincebuyret = (sincebuy.Price.pct_change() +1).cumprod() - 1
-        #         last_entry = sincebuyret[sincebuyret.last_valid_index()]
-        #         if last_entry > 0.00015 or last_entry < -0.00015:
-        #             order = client.create_order(symbol='BTCUSDT',
-        #                                             side=Client.SIDE_SELL,
-        #                                             type=Client.ORDER_TYPE_MARKET,
-        #                                             quantity=qty)
-        #             print(order)
-        #             open_position = False
-
 
 if __name__== '__main__':
     loop = asyncio.get_event_loop()
